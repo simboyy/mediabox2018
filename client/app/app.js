@@ -2982,12 +2982,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           columns: [
           //{ field: "campaignNo", title:"Campaign #", width: "70px" },
           //{ field: "email", title:"Email", width: "70px" },
-          { field: "publisher", title: "Publisher", width: "80px" }, { field: "name", title: "Name", width: "70px" }, { field: "category", title: "Dates", width: "100px", template: function template(dataItem) {
+          { field: "publisher", title: "Publisher", width: "80px" }, { field: "name", title: "Name", width: "70px" }, { field: "category", title: "Dates", width: "120px", template: function template(dataItem) {
               return "<div class=\"form-group has-feedback\">" + "<label class=\"control-label\">&nbsp</label>" + "<input type=\"text\" name=\"daterange\"  class=\"form-control\" width=\"150px\" value=\"dataItem.category\" id=\"config-demo\"   ng-model= \"dataItem.category\"\>" + "<i class=\"glyphicon glyphicon-calendar form-control-feedback\"></i>" + "</div>";
             } }, {
             field: "price",
             title: "Price",
-            width: "50px",
+            width: "40px",
 
             template: function template(dataItem) {
 
@@ -2997,7 +2997,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               return "<md-input-container>" + "<label>&nbsp</label>" + "<input  type=\"number\" value=\"dataItem.quantity\" ng-model= \"dataItem.quantity\"\>" + "</md-input-container>";
             } }, {
             field: "creative",
-            title: "Creative",
+            title: "Advert",
             width: "40px",
             template: function template(dataItem) {
               return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
@@ -3045,7 +3045,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           {
             field: "campaignNo",
             title: "Update",
-            width: "60px",
+            width: "50px",
             template: function template(dataItem) {
               return "<div>" + "<button  class=\"btn btn-success\"  ng-click=\"vm.updateItem(dataItem)\" ><i class=\"fa fa-check\">Update</i><span class=\"glyphicon glyphicon-check\"></span></button></div>" + "</div>";
             } }]
