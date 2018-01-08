@@ -126,7 +126,7 @@ function handleError(res, statusCode) {
 
 // Get all orders by a user
 function myOrders(req, res) {
-    _order2.default.find({ email: req.user.email }, function (err, orders) {
+    _order2.default.find({ email: req.user.email }, null, {sort: {created_at: -1}}, function (err, orders) {
         if (err) {
             return handleError(res, err);
         }
@@ -378,7 +378,7 @@ function pubOrdersCount(req, res) {
 
 // Get all orders for a publisher
 function pubOrders(req, res) {
-    _order2.default.find({ 'items.publisheruid': req.user.email }, function (err, orders) {
+    _order2.default.find({ 'items.publisheruid': req.user.email },  null, {sort: {created_at: -1}},function (err, orders) {
         if (err) {
             return handleError(res, err);
         }
