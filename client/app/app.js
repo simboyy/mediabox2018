@@ -2982,7 +2982,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           columns: [
           //{ field: "campaignNo", title:"Campaign #", width: "70px" },
           //{ field: "email", title:"Email", width: "70px" },
-          { field: "publisher", title: "Publisher", width: "80px" }, { field: "name", title: "Name", width: "100px" }, { field: "category", title: "Dates", width: "90px", template: function template(dataItem) {
+          { field: "publisher", title: "Publisher", width: "70px" }, { field: "name", title: "Name", width: "110px" }, { field: "category", title: "Dates", width: "90px", template: function template(dataItem) {
               return "<div class=\"form-group has-feedback\">" + "<label class=\"control-label\">&nbsp</label>" + "<input type=\"text\" name=\"daterange\"  class=\"form-control\" width=\"150px\" value=\"dataItem.category\" id=\"config-demo\"   ng-model= \"dataItem.category\"\>" + "<i class=\"glyphicon glyphicon-calendar form-control-feedback\"></i>" + "</div>";
             } }, {
             field: "price",
