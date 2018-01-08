@@ -1002,7 +1002,7 @@ angular.module('mediaboxApp').controller('LeftCtrl', function ($scope, $timeout,
       //{ field: "campaignNo", title:"Campaign #", width: "70px" },
       //{ field: "publisher", title:"Publisher", width: "100px" },
       // { field: "category", title:"Category", width: "50px" },
-      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "50px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "15px" },
+      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "40px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "15px" },
       //    { 
 
       //    title: "Status",
@@ -1018,8 +1018,8 @@ angular.module('mediaboxApp').controller('LeftCtrl', function ($scope, $timeout,
       // },
       {
         field: "creative",
-        title: "Creative",
-        width: "35px",
+        title: "Advert",
+        width: "45px",
         template: function template(dataItem) {
           return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
           //return "<div> <button  class=\"btn btn-danger\"  ng-click=\"vm.open(cart.items,item,item.creative,'md')\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>";
@@ -1069,7 +1069,7 @@ angular.module('mediaboxApp').controller('LeftCtrl', function ($scope, $timeout,
 
     Toast.show({
       type: 'success',
-      text: item.publisher + "-" + item.name + "" + "Has Been Added to Cart"
+      text: item.publisher + "-" + item.name + "" + "Has Been Added to Cart.Select Cart to Checkout"
     });
   };
 
@@ -1494,7 +1494,7 @@ angular.module('mediaboxApp').controller('CampaignCompletedController', function
       columns: [{ field: "campaignNo", title: "Campaign #", width: "70px" },
       //{ field: "publisher", title:"Publisher", width: "100px" },
       // { field: "category", title:"Category", width: "50px" },
-      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "50px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "30px" },
+      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "40px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "20px" },
       //    { 
 
       //    title: "Status",
@@ -1510,13 +1510,13 @@ angular.module('mediaboxApp').controller('CampaignCompletedController', function
       // },
       {
         field: "creative",
-        title: "Creative",
-        width: "20px",
+        title: "Advert",
+        width: "40px",
         template: function template(dataItem) {
           return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
           //return "<div> <button  class=\"btn btn-danger\"  ng-click=\"vm.open(cart.items,item,item.creative,'md')\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>";
         } }, {
-        title: "Action",
+        title: "Make Payment",
         width: "40px",
         template: function template(dataItem) {
           return "<div  ng-show= \"dataItem.status=='Campaign Accepted'\" ><md-button ng-click=\"vm.addToCart({'sku':dataItem.id, 'name':dataItem.name ,'advertiser':dataItem.advertiser,'publisher':dataItem.publisher,'publisheruid':dataItem.publisheruid,'price':dataItem.price, 'quantity':dataItem.quantity,'image':dataItem.image,  'vid':dataItem.id} ,dataItem.quantity)\" class=\"md-raised cart\">" + "<ng-md-icon icon=\"shopping_cart\"></ng-md-icon>" + "</div>";
@@ -1561,7 +1561,7 @@ angular.module('mediaboxApp').controller('CampaignCompletedController', function
 
     Toast.show({
       type: 'success',
-      text: item.publisher + "-" + item.name + "" + "Has Been Added to Cart"
+      text: item.publisher + "-" + item.name + "" + "Has Been Added to Cart.Select Cart to Checkout"
     });
   };
 
@@ -1972,7 +1972,7 @@ angular.module('mediaboxApp').controller('CampaignRunningController', function (
       //{ field: "campaignNo", title:"Campaign #", width: "70px" },
       //{ field: "publisher", title:"Publisher", width: "100px" },
       // { field: "category", title:"Category", width: "50px" },
-      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "50px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "30px" },
+      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "40px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "20px" },
       //    { 
 
       //    title: "Status",
@@ -1988,13 +1988,13 @@ angular.module('mediaboxApp').controller('CampaignRunningController', function (
       // },
       {
         field: "creative",
-        title: "Creative",
-        width: "20px",
+        title: "Advert",
+        width: "40px",
         template: function template(dataItem) {
           return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
           //return "<div> <button  class=\"btn btn-danger\"  ng-click=\"vm.open(cart.items,item,item.creative,'md')\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>";
         } }, {
-        title: "Action",
+        title: "Make Payment",
         width: "40px",
         template: function template(dataItem) {
           return "<div  ng-show= \"dataItem.status=='Campaign Accepted'\" ><md-button ng-click=\"vm.addToCart({'sku':dataItem.id, 'name':dataItem.name ,'advertiser':dataItem.advertiser,'publisher':dataItem.publisher,'publisheruid':dataItem.publisheruid,'price':dataItem.price, 'quantity':dataItem.quantity,'image':dataItem.image,  'vid':dataItem.id} ,dataItem.quantity)\" class=\"md-raised cart\">" + "<ng-md-icon icon=\"shopping_cart\"></ng-md-icon>" + "</div>";
@@ -2039,7 +2039,7 @@ angular.module('mediaboxApp').controller('CampaignRunningController', function (
 
     Toast.show({
       type: 'success',
-      text: item.publisher + "-" + item.name + "" + "Has Been Added to Cart"
+      text: item.publisher + "-" + item.name + "" + "Has Been Added to Cart.Select Cart to Checkout"
     });
   };
 
@@ -2448,14 +2448,14 @@ angular.module('mediaboxApp').controller('CampaignScheduledController', function
       sortable: true,
 
       pageable: true,
-      columns: [{ field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", format: "{0:c2}", width: "50px" }, { field: "quantity", title: "Inserts", width: "30px" }, {
+      columns: [{ field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", format: "{0:c2}", width: "40px" }, { field: "quantity", title: "Inserts", width: "20px" }, {
         field: "creative",
-        title: "Creative",
-        width: "20px",
+        title: "Advert",
+        width: "40px",
         template: function template(dataItem) {
           return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
         } }, {
-        title: "Action",
+        title: "Make Payment",
         width: "40px",
         template: function template(dataItem) {
           return "<div  ng-show= \"dataItem.status=='Campaign Accepted'\" ><md-button ng-click=\"vm.addToCart({'sku':dataItem.id, 'name':dataItem.name ,'advertiser':dataItem.advertiser,'publisher':dataItem.publisher,'publisheruid':dataItem.publisheruid,'price':dataItem.price, 'quantity':dataItem.quantity,'image':dataItem.image,  'vid':dataItem.id} ,dataItem.quantity)\" class=\"md-raised cart\">" + "<ng-md-icon icon=\"shopping_cart\"></ng-md-icon>" + "</div>";
@@ -2499,7 +2499,7 @@ angular.module('mediaboxApp').controller('CampaignScheduledController', function
 
     Toast.show({
       type: 'success',
-      text: item.publisher + "-" + item.name + "" + "Has Been Added to Cart"
+      text: item.publisher + "-" + item.name + "" + "Has Been Added to Cart:Select Cart to Checkout"
     });
   };
 
