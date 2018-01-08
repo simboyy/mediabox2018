@@ -181,7 +181,7 @@ function myCampaigns(req, res) {
   var q = isJson(req.query.where);
   ////console.log(q);
 
-  _campaign2.default.find(q, function (err, campaigns) {
+_campaign2.default.find(q).sort({created_at: -1}).exec(function (err, campaigns) {
     if (err) {
       return handleError(res, err);
     }
@@ -216,7 +216,7 @@ function pubCampaigns(req, res) {
   var q = isJson(req.query.where);
   ////console.log(q);
 
-  _campaign2.default.find(q, function (err, campaigns) {
+  _campaign2.default.find(q).sort({created_at: -1}).exec(function (err, campaigns) {
     if (err) {
       return handleError(res, err);
     }
@@ -226,7 +226,7 @@ function pubCampaigns(req, res) {
 
 // Gets a list of Campaigns
 function index(req, res) {
-  return _campaign2.default.find().exec().then(respondWithResult(res)).catch(handleError(res));
+  return _campaign2.default.find().sort({created_at: -1}).exec().then(respondWithResult(res)).catch(handleError(res));
 }
 
 // Gets a single Campaign from the DB
