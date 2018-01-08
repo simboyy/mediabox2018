@@ -1002,7 +1002,7 @@ angular.module('mediaboxApp').controller('LeftCtrl', function ($scope, $timeout,
       //{ field: "campaignNo", title:"Campaign #", width: "70px" },
       //{ field: "publisher", title:"Publisher", width: "100px" },
       // { field: "category", title:"Category", width: "50px" },
-      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "40px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "15px" },
+      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "40px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "25px" },
       //    { 
 
       //    title: "Status",
@@ -1019,7 +1019,7 @@ angular.module('mediaboxApp').controller('LeftCtrl', function ($scope, $timeout,
       {
         field: "creative",
         title: "Advert",
-        width: "45px",
+        width: "35px",
         template: function template(dataItem) {
           return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
           //return "<div> <button  class=\"btn btn-danger\"  ng-click=\"vm.open(cart.items,item,item.creative,'md')\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>";
@@ -1494,7 +1494,7 @@ angular.module('mediaboxApp').controller('CampaignCompletedController', function
       columns: [{ field: "campaignNo", title: "Campaign #", width: "70px" },
       //{ field: "publisher", title:"Publisher", width: "100px" },
       // { field: "category", title:"Category", width: "50px" },
-      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "40px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "20px" },
+      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "40px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "30px" },
       //    { 
 
       //    title: "Status",
@@ -1511,7 +1511,7 @@ angular.module('mediaboxApp').controller('CampaignCompletedController', function
       {
         field: "creative",
         title: "Advert",
-        width: "40px",
+        width: "30px",
         template: function template(dataItem) {
           return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
           //return "<div> <button  class=\"btn btn-danger\"  ng-click=\"vm.open(cart.items,item,item.creative,'md')\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>";
@@ -1972,7 +1972,7 @@ angular.module('mediaboxApp').controller('CampaignRunningController', function (
       //{ field: "campaignNo", title:"Campaign #", width: "70px" },
       //{ field: "publisher", title:"Publisher", width: "100px" },
       // { field: "category", title:"Category", width: "50px" },
-      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "40px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "20px" },
+      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "40px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "30px" },
       //    { 
 
       //    title: "Status",
@@ -1989,7 +1989,7 @@ angular.module('mediaboxApp').controller('CampaignRunningController', function (
       {
         field: "creative",
         title: "Advert",
-        width: "40px",
+        width: "30px",
         template: function template(dataItem) {
           return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
           //return "<div> <button  class=\"btn btn-danger\"  ng-click=\"vm.open(cart.items,item,item.creative,'md')\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>";
@@ -2448,10 +2448,10 @@ angular.module('mediaboxApp').controller('CampaignScheduledController', function
       sortable: true,
 
       pageable: true,
-      columns: [{ field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", format: "{0:c2}", width: "40px" }, { field: "quantity", title: "Inserts", width: "20px" }, {
+      columns: [{ field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", format: "{0:c2}", width: "40px" }, { field: "quantity", title: "Inserts", width: "30px" }, {
         field: "creative",
         title: "Advert",
-        width: "40px",
+        width: "30px",
         template: function template(dataItem) {
           return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
         } }, {
