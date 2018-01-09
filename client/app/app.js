@@ -8161,7 +8161,7 @@ angular.module('mediaboxApp').config(function ($stateProvider) {
       //{text:'Reviews', url: 'review', authenticate: true, role: 'admin',icon: 'star'},
       //{text:'Moderate Reviews', url: 'reviews', authenticate: true, role: 'admin', icon: 'star'},
       //{text:'Wishlist', url: 'wish', authenticate: true, role: 'admin',icon: 'favorite'},
-      { text: 'My Library', url: 'media', authenticate: true, icon: 'photo_library' }, { text: 'Media Library', url: 'medias', authenticate: true, role: 'manager', icon: 'photo_library' }, { text: 'Inventory', url: 'product', authenticate: true, role: 'manager', icon: 'style' }],
+      { text: 'Upload Adverts', url: 'media', authenticate: true, icon: 'photo_library' }, { text: 'Incoming Adverts', url: 'medias', authenticate: true, role: 'manager', icon: 'photo_library' }, { text: 'Inventory', url: 'product', authenticate: true, role: 'manager', icon: 'style' }],
       user: [// Separate panel for user management tasks for both admin and user
       /// {text:'Users', url: 'admin', authenticate: true, role: 'admin', icon: 'perm_identity'},
       { text: 'Change Password', authenticate: true, url: 'cp', icon: 'settings_applications' }, { text: 'logout', authenticate: true, url: 'logout', icon: 'logout' }]
