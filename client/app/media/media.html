@@ -2,17 +2,17 @@
 <left-menu></left-menu>
 <div class="container">
 <div layout-align="start center" layout="column">
-<h2 class="md-title">Media Library</h2>
+<h2 class="md-title">Advert Library</h2>
 <md-progress-linear md-mode="determinate" value="{{progress}}" class="md-warn" ng-show="progress >= 0"></md-progress-linear>
-<!-- <span class="progress">
+<span class="progress">
 	<div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
-</span> -->
+</span>
 </div>
 <div layout="column">
 	<div ngf-drop ngf-select ng-model="files" class="drop-box"
 			ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
 			accept="image/*"
-			ngf-pattern="'image/*'">Drop images here to upload<br/>
+			ngf-pattern="'image/*'">Drop Advert here to upload<br/>
 			or <br/>
 		<md-button tabindex="0"
 		class="md-button md-default-theme md-warn md-raised"
@@ -32,9 +32,10 @@
 			<div class="thumbnail">
 				      
 				       <img ng-if="i.type=='image/jpg'" ng-src="{{i.path}}" draggable="false" alt="{{i.name}}">
-					<img ng-if="i.type=='image/png'" ng-src="{{i.path}}" draggable="false" alt="{{i.name}}">
-				        <img ng-if="i.type=='application/pdf'" src="https://image.ibb.co/fgMVpm/pdf.png" alt="pdf" border="0">
-				        <img ng-if="i.type=='application/vnd.openxmlformats-officedocument.wordprocessingml.document'" src="https://image.ibb.co/ehe8QR/word.png" alt="word" border="0">
+				         <img ng-if="i.type=='image/jpeg'" ng-src="{{i.path}}" draggable="false" alt="{{i.name}}">
+					<img ng-if="i.type=='image/png'" ng-src="{{i.path}}" draggable="false" alt="{{i.name}}">				 
+				        <img ng-if="i.type=='application/pdf'" src="https://image.ibb.co/kEAaBm/icon_3_pdf_x128.png" alt="icon_3_pdf_x128" border="0">
+				        <img ng-if="i.type=='application/vnd.openxmlformats-officedocument.wordprocessingml.document'" src="https://image.ibb.co/mcwnP6/icon_1_word_x128.png" alt="icon_1_word_x128" border="0">				      
 				       <audio ng-if="i.type=='audio/mp3'" controls ng-src="{{i.path}}"></audio>
                                        <video ng-if="i.type=='video/mp4'" controls ng-src="{{i.path}}"></video>
 				
