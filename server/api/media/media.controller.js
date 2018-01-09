@@ -82,17 +82,17 @@ function handleError(res, statusCode) {
 
 // Gets a list of Medias
 function index(req, res) {
-  return _media2.default.find({ 'uid': req.user.email }).exec().then(respondWithResult(res)).catch(handleError(res));
+  return _media2.default.find({ 'uid': req.user.email },null, {sort: {created_at: -1}}).exec().then(respondWithResult(res)).catch(handleError(res));
 }
 
 // Gets a list of Medias
 function myMedia(req, res) {
-  return _media2.default.find({ 'uid': req.user.email }).exec().then(respondWithResult(res)).catch(handleError(res));
+  return _media2.default.find({ 'uid': req.user.email },null, {sort: {created_at: -1}}).exec().then(respondWithResult(res)).catch(handleError(res));
 }
 
 // Gets a list of Medias
 function pubMedia(req, res) {
-  return _media2.default.find({ 'pub': req.user.email }).exec().then(respondWithResult(res)).catch(handleError(res));
+  return _media2.default.find({ 'pub': req.user.email },null, {sort: {created_at: -1}}).exec().then(respondWithResult(res)).catch(handleError(res));
 }
 
 // Gets a single Media from the DB
