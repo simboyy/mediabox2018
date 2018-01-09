@@ -4,10 +4,10 @@
 <div layout-align="start center" layout="column">
 <h2 class="md-title">Advert Library</h2>
 <md-progress-linear md-mode="determinate" value="{{progress}}" class="md-warn" ng-show="progress >= 0"></md-progress-linear>
-<div class="container"><span class="progress">
+<span class="progress">
 	<div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
 </span>
-</div>	
+
 </div>
 <div layout="column">
 	<div ngf-drop ngf-select ng-model="files" class="drop-box"
