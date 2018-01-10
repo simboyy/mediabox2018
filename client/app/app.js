@@ -668,7 +668,7 @@ angular.module('mediaboxApp').controller('LeftCtrl', function ($scope, $timeout,
 
   vm.mediaLibrary = function (index) {
     $mdDialog.show({
-      template: '<md-dialog aria-label="Media Library" ng-cloak flex="95">\n        <md-toolbar class="md-warn">\n          <div class="md-toolbar-tools">\n            <h2>Media Library</h2>\n            <span flex></span>\n            <md-button class="md-icon-button" ng-click="cancel()">\n              <ng-md-icon icon="close" aria-label="Close dialog"></ng-md-icon>\n            </md-button>\n          </div>\n        </md-toolbar>\n\n        <md-dialog-content>\n            <div class="md-dialog-content padding"  class="md-whiteframe-z2">\n                <md-grid-list class="media-list" md-cols-xs ="3" md-cols-sm="4" md-cols-md="5" md-cols-lg="7" md-cols-gt-lg="10" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="12px" md-gutter-gt-sm="8px" layout="row" layout-align="center center">\n                  <md-grid-tile ng-repeat="i in media" class="md-whiteframe-z2" ng-click="ok(i.path)">\n                    <div class="thumbnail">\n                        <img ng-src="{{i.path}}" draggable="false" alt="{{i.name}}">\n                    </div>\n                    <md-grid-tile-footer><h3>{{i.name}}</h3></md-grid-tile-footer>\n                  </md-grid-tile>\n                </md-grid-list>\n          </div>\n        </md-dialog-content>\n        <md-dialog-actions layout="row">\n          <span flex></span>\n          <md-button ng-click="addNewImage()" class="md-warn md-raised">\n           Add new Creative\n          </md-button>\n        </md-dialog-actions>\n      </md-dialog>\n',
+      template: '<md-dialog aria-label="Media Library" ng-cloak flex="95">\n        <md-toolbar class="md-warn">\n          <div class="md-toolbar-tools">\n            <h2>Media Library</h2>\n            <span flex></span>\n            <md-button class="md-icon-button" ng-click="cancel()">\n              <ng-md-icon icon="close" aria-label="Close dialog"></ng-md-icon>\n            </md-button>\n          </div>\n        </md-toolbar>\n\n        <md-dialog-content>\n            <div class="md-dialog-content padding"  class="md-whiteframe-z2">\n                <md-grid-list class="media-list" md-cols-xs ="3" md-cols-sm="4" md-cols-md="5" md-cols-lg="7" md-cols-gt-lg="10" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="12px" md-gutter-gt-sm="8px" layout="row" layout-align="center center">\n                  <md-grid-tile ng-repeat="i in media" class="md-whiteframe-z2" ng-click="ok(i.path)">\n                    <div class="thumbnail">\n                        <img ng-src="{{i.path}}" draggable="false" alt="{{i.name}}">\n                    </div>\n                    <md-grid-tile-footer><h3>{{i.name}}</h3></md-grid-tile-footer>\n                  </md-grid-tile>\n                </md-grid-list>\n          </div>\n        </md-dialog-content>\n        <md-dialog-actions layout="row">\n          <span flex></span>\n          <md-button ng-click="addNewImage()" class="md-warn md-raised">\n           Add new Advert\n          </md-button>\n        </md-dialog-actions>\n      </md-dialog>\n',
       controller: function controller($scope, $mdDialog, $http, socket, $state) {
         // Start query the database for the table
         var vm = this;
@@ -1394,7 +1394,7 @@ angular.module('mediaboxApp').controller('CampaignCompletedController', function
       this.expandRow(this.tbody.find("tr.k-master-row").first());
     },
     columns: [
-    //{ field: "campaignNo", title: "Campaign ID" },
+    { field: "campaignNo", title: "Campaign ID" },
     { field: "campaignName", title: "Campaign Name" }, { field: "created_at", title: "Date Created", type: 'datetime', template: "#=  (created_at == null)? '' : kendo.toString(kendo.parseDate(created_at, 'yyyy-MM-dd'), 'MM/dd/yy') #" },
     //{ field: "endDate", title: "Start Date-End Date",type: 'datetime',template: "#=  (endDate == null)? '' : kendo.toString(kendo.parseDate(endDate, 'yyyy-MM-dd'), 'MM/dd/yy') #" },
     { field: "status", title: "Status", template: function template(dataItem) {
@@ -1491,10 +1491,11 @@ angular.module('mediaboxApp').controller('CampaignCompletedController', function
       sortable: true,
 
       pageable: true,
-      columns: [{ field: "campaignNo", title: "Campaign #", width: "70px" },
+      columns: [
+      //{ field: "campaignNo", title: "Campaign #", width: "70px" },
       //{ field: "publisher", title:"Publisher", width: "100px" },
       // { field: "category", title:"Category", width: "50px" },
-      { field: "name", title: "Name", width: "80px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "50px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "30px" },
+      { field: "name", title: "Name", width: "100px" }, { field: "category", title: "Start - End Date", width: "60px" }, { field: "price", title: "Price", width: "50px", format: "{0:c2}" }, { field: "quantity", title: "Inserts", width: "30px" },
       //    { 
 
       //    title: "Status",
@@ -1510,13 +1511,13 @@ angular.module('mediaboxApp').controller('CampaignCompletedController', function
       // },
       {
         field: "creative",
-        title: "Creative",
-        width: "20px",
+        title: "Advert",
+        width: "40px",
         template: function template(dataItem) {
           return "<div ng-hide=\"dataItem.creative\">" + "<button  class=\"btn btn-danger\" ng-hide=\"isAdmin()\" ng-click=\"vm.mediaLibrary(dataItem)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>" + "<div ng-show=\"dataItem.creative\">" + "<button  class=\"btn btn-success\" ng-hide=\"isAdmin()\" ng-click=\"vm.imageDetails(dataItem.creative)\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>" + "</div>";
           //return "<div> <button  class=\"btn btn-danger\"  ng-click=\"vm.open(cart.items,item,item.creative,'md')\" ><i class=\"fa fa-image\"></i><span class=\"glyphicon glyphicon-upload\"></span></button></div>";
         } }, {
-        title: "Action",
+        title: "Make Payment",
         width: "40px",
         template: function template(dataItem) {
           return "<div  ng-show= \"dataItem.status=='Campaign Accepted'\" ><md-button ng-click=\"vm.addToCart({'sku':dataItem.id, 'name':dataItem.name ,'advertiser':dataItem.advertiser,'publisher':dataItem.publisher,'publisheruid':dataItem.publisheruid,'price':dataItem.price, 'quantity':dataItem.quantity,'image':dataItem.image,  'vid':dataItem.id} ,dataItem.quantity)\" class=\"md-raised cart\">" + "<ng-md-icon icon=\"shopping_cart\"></ng-md-icon>" + "</div>";
