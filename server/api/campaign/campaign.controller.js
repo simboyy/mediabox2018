@@ -58,8 +58,8 @@ const Invoice = require("../lib");
 const path = require('path');
 var fs      = require('fs');
 const ABSPATH = path.dirname(process.mainModule.filename); // Absolute path to our app directory
-var filePath = path.join(ABSPATH, '/api/campaign/my-invoice.html');
-var filePath2 = path.join(ABSPATH, '/api/campaign/my-quote.html');
+var filePath = path.join(ABSPATH, '/api/campaign/my-invoice.pdf');
+var filePath2 = path.join(ABSPATH, '/api/campaign/my-quote.pdf');
 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
