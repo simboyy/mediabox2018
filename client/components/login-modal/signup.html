@@ -9,6 +9,16 @@
               </p>
             </p>
       </div>
+	  <p><h4>Sign Up Using</h4></p><br>
+	  <div style="line-height:50px">
+	  </div>
+	  <pre>
+	   
+	  
+	  
+	  <oauth-buttons></oauth-buttons>
+	  </pre>
+	  
     </div>
 
     
@@ -45,20 +55,16 @@
 					</div>
 				</md-input-container>
 
-				<md-input-container md-is-error="form.company.$error.required && form.company.$dirty">
+				<md-input-container >
 					<label>Company</label>
-					<input name="company" ng-model="signup.user.company" required md-autofocus/>
-					<div ng-messages="form.company.$error" ng-if="form.company.$dirty">
-						<div ng-message="required">Company is required</div>
-					</div>
+					<input name="company" ng-model="signup.user.company"  md-autofocus/>
+					
 				</md-input-container>
 
-				<md-input-container md-is-error="form.website.$error.required && form.website.$dirty">
+				<md-input-container >
 					<label>Website</label>
-					<input name="website" ng-model="signup.user.website" required md-autofocus/>
-					<div ng-messages="form.website.$error" ng-if="form.website.$dirty">
-						<div ng-message="required">Website is required</div>
-					</div>
+					<input name="website" ng-model="signup.user.website"  md-autofocus/>
+					
 				</md-input-container>
 				<md-input-container md-is-error="form.website.$error.required && form.website.$dirty">
 				<md-checkbox value="user">
