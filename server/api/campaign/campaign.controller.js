@@ -145,7 +145,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
                     street: "Impala Road"
                   , number: "8"
                   , zip: ""
-                  , city: "Harare"
+                  , city: "Borrowdale West ,Harare"
                   , region: ""
                   , country: "Zimbabwe"
                 }
@@ -273,7 +273,7 @@ function genereteQuote(req,res){
                     street: "Impala Road"
                   , number: "8"
                   , zip: ""
-                  , city: "Harare"
+                  , city: "Borrowdale West ,Harare"
                   , region: ""
                   , country: "Zimbabwe"
                 }
