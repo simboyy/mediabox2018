@@ -305,15 +305,15 @@ router.get('/prepare', function (req, res) {
             var PS_AWAITING_DELIVERY = "awaiting delivery";
             var PS_DELIVERED = "delivered";
             var PS_AWAITING_REDIRECT = "awaiting redirect";
-            var SITE_URL = "http://www.mediabox.co.zw";
+            var SITE_URL = "http://www.adspaces0.co.zw";
 
             paynowJSONObject = {
                 id: 3100,
                 reference: orderNo,
                 amount: total,
                 additionalInfo: '',
-                returnUrl: 'http://www.mediabox.co.zw/api/pay/gettingbackfrompaynow',
-                resulturl: 'http://www.mediabox.co.zw/api/pay/paynowupdatingus',
+                returnUrl: 'http://www.adspaces.co.zw/api/pay/gettingbackfrompaynow',
+                resulturl: 'http://www.adspaces.co.zw/api/pay/paynowupdatingus',
                 authemail: '',
                 status: 'message'
 
