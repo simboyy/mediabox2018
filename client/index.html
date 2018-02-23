@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2016.3.1118/styles/kendo.default.min.css">
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2016.3.1118/styles/kendo.mobile.all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="app/vendor-e8cd92c731.css">
@@ -75,7 +77,17 @@
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>    
     <script type="text/javascript" src="https://kendo.cdn.telerik.com/2016.3.1118/js/pako_deflate.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+   
+      <a id="popuplink" href="#inline" style="display:none;"></a>
+      <div id="inline" style="display:none;text-align:center;">
+      <img src="https://thebeachfurniture.co.nz/newbeach-logo.png" alt="" id="logo">
+      <h3 style="margin-top:20px;">The Beach Furniture has changed its name to Urban & Beach Furniture</h3>
+      <p>But we will continue providing the same beautifully crafted character furniture</p>
+      <p><a href="javascript:;" onclick="jQuery.fancybox.close();" style="background-color:#333;padding:5px 10px;color:#fff;border-radius:5px;text-decoration:none;">Close</a></p>
+      </div>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.js"></script>
     
   </body>
 </html>
