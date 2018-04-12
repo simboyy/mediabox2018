@@ -7,21 +7,9 @@
       <div layout="row" layout-align="space-between start" ng-repeat="item in vm.cart.items" class="cart-item md-whiteframe-z1">
             <img  class="md-whiteframe-z1" width="80px" height="100%" data-ng-src="data:image/png;base64,{{item.image}}" err-SRC="/assets/images/50x50.png"  alt="{{item.name}}" />
             <div layout="column" flex style="margin: 7px">
-                <div >{{ item.name }} <span ng-if="item.size">(Size: {{item.size}})</span></div>
-                <div ng-if="item.price">{{ item.price | currency:vm.Settings.currency.symbol }} * {{item.quantity}} = 
-                <strong>{{item.price * item.quantity | currency:vm.Settings.currency.symbol}}</strong></div>
+                <div >{{ item.name }} <span ng-if="item.size">(Size: {{item.size}})</span></div>                
                 <div layout="row" layout-align="center center">
- <!--Cart buttons-->
-        <md-button class="md-raised md-primary small-button md-icon-button" 
-              ng-click="vm.cart.addItem({sku:item.sku, name:item.name, slug:item.slug, mrp:item.mrp, price:item.price, weight:item.weight, vid:item.vid}, -1)" 
-              aria-label="Remove from cart">
-                  <ng-md-icon icon="remove"></ng-md-icon>
-        </md-button>
-        <div class="md-raised"  ng-disabled="true" aria-label="Cart quantity">{{vm.cart.getQuantity(item.sku, item.vid)}}</div>
-        <md-button class="md-raised md-primary small-button md-icon-button" ng-click="vm.cart.addItem({sku:item.sku, name:item.name, slug:item.slug, mrp:item.mrp, price:item.price, weight:item.weight, vid:item.vid}, +1)" aria-label="Add to cart">
-                  <ng-md-icon icon="add"></ng-md-icon>
-        </md-button>
- <!--Cart buttons-->
+ 
 
       </div>
             </div>

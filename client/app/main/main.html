@@ -1,9 +1,10 @@
 <navbar leftmenu="true"></navbar>
+<div class="cars-section" >
 <div class="container">
     <div layout="row">
         <div ng-include="'app/main/filter-menu.html'"></div>
         <!--<md-content flex layout="column">-->
-        <section layout="column" layout-fill flex>
+        <section layout="column" layout-fill flex >
             <div class="sort-products md-whiteframe-z2">
                 <div class="products-list-meta" ng-if="main.$mdMedia('gt-md')" flex>
                     Showing {{main.products.items.length}} products of {{main.products.count}} in: {{vm.Settings.currency.symbol}}<strong>{{main.priceSlider.min}}</strong> &nbsp;-&nbsp; {{vm.Settings.currency.symbol}}<strong>{{main.priceSlider.max}}</strong>
@@ -46,32 +47,38 @@
             </div>
             <div style="margin-top: 10px" infinite-scroll='main.scroll()' infinite-scroll-disabled='main.products.busy' infinite-scroll-distance='1' layout-align="center center">
                 <div dw-loading="products" dw-loading-options="{text: ''}"></div>
-                <div layout="row" layout-wrap layout-align="start start">
-                    <div class="col-md-4 col-sm-6" ng-repeat="product in main.products.items" layout="column" layout-align="space-between center">
-                        <div class="product" style="height: 300px">
-                            <div class="img-logo" style="margin: 5px">
+                
+					
+					<div class="row" layout="row" layout-wrap layout-align="start start" >
+						  <div class="col-md-4" ng-repeat="product in main.products.items">
+							 <div class="news-box" style="height: 300px">
+							   <div class="img-logo" style="margin: 5px">
                                 <center>
                                     <img ng-click="main.gotoDetail(product)" width="150px" height="90px" data-ng-src="data:image/png;base64,{{product.logo[0].base64}}" data-err-src="images/png/avatar.png" />
                                 </center>
                             </div>
                             <div class="text text-center" style="margin-top: 50px;height: 250px">
-                                <a href="" ng-click="main.gotoDetail(product)"><h5>{{product.name}}</h5></a>
+                                <h5>{{product.name}}</h5></a>
                                 <br><a ng-href="http://{{product.website}}"> {{product.website}}</a>
-                                <div style="margin: 7px">
+                                <div >
                                     <ol class="rounded-list">
-                                        <li ng-repeat="f in product.stats |limitTo :3"><a href="#">{{f.key}} : {{f.val}}</a></li>
+                                        <li ng-repeat="f in product.stats |limitTo :2"><a href="#">{{f.key}} : {{f.val}}</a></li>
                                     </ol>
                                 </div>
+								<button ng-click="main.gotoDetail(product)" type="button" class="btn btn-sm site-btn">Explore</button>
                             </div>
-                            
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
+							  
+							 </div>
+						  </div>
+              
+             
+          
                     </div>
-                </div>
+               
             </div>
         </section>
         <!--</md-content>-->
     </div>
+</div>
 </div>
 <footer></footer>
