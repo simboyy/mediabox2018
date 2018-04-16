@@ -160,6 +160,20 @@ function uploadFile(remoteFilename, fileName ) {
     console.log(arguments);
   });
 }
+
+function getContentTypeByFile(fileName) {
+  var rc = 'application/octet-stream';
+  var fileNameLowerCase = fileName.toLowerCase();
+
+  if (fileNameLowerCase.indexOf('.html') >= 0) rc = 'text/html';
+  else if (fileNameLowerCase.indexOf('.css') >= 0) rc = 'text/css';
+  else if (fileNameLowerCase.indexOf('.json') >= 0) rc = 'application/json';
+  else if (fileNameLowerCase.indexOf('.js') >= 0) rc = 'application/x-javascript';
+  else if (fileNameLowerCase.indexOf('.png') >= 0) rc = 'image/png';
+  else if (fileNameLowerCase.indexOf('.jpg') >= 0) rc = 'image/jpg';
+
+  return rc;
+}
 // Updates an existing Media in the DB
 function update(req, res) {
 
