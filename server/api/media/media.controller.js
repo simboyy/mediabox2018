@@ -115,7 +115,7 @@ function create(req, res) {
 	var aws = require('aws-sdk');
 	aws.config.loadFromPath('./AwsConfig.json');
 
-	var fileBuffer = fs.readFileSync(req.files.file.path);
+	
    
 
   
