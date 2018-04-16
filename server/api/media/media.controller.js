@@ -107,7 +107,15 @@ function create(req, res) {
         var BUCKET_NAME = 'mediabox-adverts';
 	var fs = require('fs');
 	var aws = require('aws-sdk');
-	aws.config.loadFromPath('./AwsConfig.json');
+	var accessKeyId =  process.env.AWS_ACCESS_KEY || "AKIAIL6ZDHOIRIPXFTQA";
+        var secretAccessKey = process.env.AWS_SECRET_KEY || "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";
+	var region = process.env.REGION || "us-east-1";
+
+	    aws.config.update({
+		accessKeyId: accessKeyId,
+		secretAccessKey: secretAccessKey,
+		region: region    
+	    });
 
 	var fileBuffer = fs.readFileSync(req.files.file.path);
 	var s3 = new aws.S3();
