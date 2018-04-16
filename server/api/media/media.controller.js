@@ -117,7 +117,7 @@ function create(req, res) {
 		region: region    
 	    });
 
-	var fileBuffer = fs.readFileSync(req.files.file.path);
+	//var fileBuffer = fs.readFileSync(req.files.file.path);
 	var s3 = new aws.S3();
    
 
