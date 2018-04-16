@@ -101,9 +101,51 @@ function show(req, res) {
 }
 
 // Creates a new Media in the DB
+// Creates a new Media in the DB
 function create(req, res) {
   req.files.file.uid = req.user.email;
   req.files.file.path = req.files.file.path.replace("client\\", "").replace('client/', '').replace('client//', '');
+  
+  //  upload to s3
+      
+	    var AWS = require('aws-sdk');
+
+		var s3 = new AWS.S3();
+
+		// Bucket names must be unique across all S3 users
+
+		var myBucket = 'mediabox-adverts';
+
+		var myKey = 'AKIAIL6ZDHOIRIPXFTQA';
+
+		s3.createBucket({Bucket: myBucket}, function(err, data) {
+
+		if (err) {
+
+		   console.log(err);
+
+		   } else {
+
+			 params = {Bucket: myBucket, Key: myKey, Body: 'Hello!'};
+
+			 s3.putObject(params, function(err, data) {
+
+				 if (err) {
+
+					 console.log(err)
+
+				 } else {
+
+					 console.log("Successfully uploaded data to myBucket/myKey");
+
+				 }
+
+			  });
+
+		   }
+
+		});
+  
   return _media2.default.create(req.files.file).then(respondWithResult(res, 201)).catch(handleError(res));
 }
 
