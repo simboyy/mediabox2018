@@ -118,16 +118,7 @@ function create(req, res) {
 	var fileBuffer = fs.readFileSync(req.files.file.path);
    
 
-  s3.putObject({
-    ACL: 'public-read',
-    Bucket: BUCKET_NAME,
-    Key: req.files.file.name,
-    Body: fileBuffer,
-    ContentType: req.files.file.type
-  }, function(error, response) {
-    console.log('uploaded file[' + req.files.file.name + '] to [' + req.files.file.name + '] as [' + req.files.file.name + ']');
-    
-  });
+  
     
   
   return _media2.default.create(req.files.file).then(respondWithResult(res, 201)).catch(handleError(res));
