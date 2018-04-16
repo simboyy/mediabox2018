@@ -108,29 +108,26 @@ function create(req, res) {
   
    //  upload to s3
   
-  var AWS = require('aws-sdk');
-  var fs = require('fs');
+   var BUCKET_NAME = 'mediabox-adverts';
 
-  const s3 = new AWS.S3();
-  const fileName = req.files.file.name ;
-  const fileType = req.files.file.type;
-  const s3Params = {
-    Bucket: S3_BUCKET,
-    Key: fileName,
-    Expires: 60,
-    ContentType: fileType,
-    Body: fs.createReadStream(req.files.file.path),
-    ACL: 'public-read'
-  };
+	var fs = require('fs');
 
-  s3.getSignedUrl('putObject', s3Params, (err, data) => {
-    if(err){
-      console.log(err);
-          }
-    const returnData = {
-      signedRequest: data,
-      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
-    };
+	var aws = require('aws-sdk');
+	aws.config.loadFromPath('./AwsConfig.json');
+
+	var fileBuffer = fs.readFileSync(req.files.file.path);
+   
+
+  s3.putObject({
+    ACL: 'public-read',
+    Bucket: BUCKET_NAME,
+    Key: req.files.file.name,
+    Body: fileBuffer,
+    ContentType: req.files.file.type
+  }, function(error, response) {
+    console.log('uploaded file[' + req.files.file.name + '] to [' + req.files.file.name + '] as [' + req.files.file.name + ']');
+    
+  });
     
     
   });
