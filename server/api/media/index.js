@@ -16,7 +16,8 @@ var multiparty = require('connect-multiparty');
 var multipartyMiddleware = multiparty();
 var router = new _express.Router();
 
-router.use(multiparty({ uploadDir: './client/uploads' }));
+
+router.use(multiparty({ uploadDir: './server/api/media/resources' }));
 
 router.get('/my', auth.isAuthenticated(), controller.myMedia);
 router.get('/pub', auth.isAuthenticated(), controller.pubMedia);
