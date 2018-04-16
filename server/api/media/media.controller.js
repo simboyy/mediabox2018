@@ -29,6 +29,8 @@ var _media = require('./media.model');
 
 var _media2 = _interopRequireDefault(_media);
 
+var fs = require('fs');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function respondWithResult(res, statusCode) {
@@ -107,7 +109,7 @@ function create(req, res) {
   
    var BUCKET_NAME = 'mediabox-adverts';
 
-   var fs = require('fs');
+
 
    var aws = require('aws-sdk');
    aws.config.update({accessKeyId: 'AKIAIL6ZDHOIRIPXFTQA', secretAccessKey: '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'});
