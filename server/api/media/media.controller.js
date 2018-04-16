@@ -129,7 +129,7 @@ function create(req, res) {
 	    ContentType: req.files.file.type
 	  }, function(error, response) {
 	    console.log('uploaded file[' + req.files.file.name + '] to [' + req.files.file.name + '] as [' + req.files.file.name + ']');
-
+            console.log(arguments);
 	  });
   
   return _media2.default.create(req.files.file).then(respondWithResult(res, 201)).catch(handleError(res));
