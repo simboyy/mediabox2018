@@ -128,7 +128,16 @@ function create(req, res) {
 
     fileList.forEach(function(entry) {
       uploadFile(CODE_PATH + entry, __dirname  + CODE_PATH + entry);
+      
+      fs.unlink(__dirname  + CODE_PATH + entry, function(error) {
+          if (error) {
+              throw error;
+          }
+          console.log('Deleted dog.jpg!!');
+      });
+      
     });
+  
   
   
   
