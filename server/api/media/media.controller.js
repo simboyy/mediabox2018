@@ -100,27 +100,9 @@ function show(req, res) {
   return _media2.default.findById(req.params.id).exec().then(handleEntityNotFound(res)).then(respondWithResult(res)).catch(handleError(res));
 }
 
-// Creates a new Media in the DB
-// Creates a new Media in the DB
 function create(req, res) {
   req.files.file.uid = req.user.email;
   req.files.file.path = req.files.file.path.replace("client\\", "").replace('client/', '').replace('client//', '');
-  
-   //  upload to s3
-  
-   var BUCKET_NAME = 'mediabox-adverts';
-
-	var fs = require('fs');
-
-	var aws = require('aws-sdk');
-	aws.config.loadFromPath('./AwsConfig.json');
-
-	
-   
-
-  
-    
-  
   return _media2.default.create(req.files.file).then(respondWithResult(res, 201)).catch(handleError(res));
 }
 
