@@ -31,6 +31,16 @@ var _media2 = _interopRequireDefault(_media);
 
 var fs = require('fs');
 
+var BUCKET_NAME = 'mediabox-adverts';
+
+
+
+   var aws = require('aws-sdk');
+   aws.config.update({accessKeyId: 'AKIAIL6ZDHOIRIPXFTQA', secretAccessKey: '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'});
+   aws.config.update({region: 'us-east-1'});
+
+   var s3 = new aws.S3();
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function respondWithResult(res, statusCode) {
@@ -107,15 +117,7 @@ function create(req, res) {
    req.files.file.uid = req.user.email;
    req.files.file.path = req.files.file.path.replace("client\\", "").replace('client/', '').replace('client//', ''); 
   
-   var BUCKET_NAME = 'mediabox-adverts';
-
-
-
-   var aws = require('aws-sdk');
-   aws.config.update({accessKeyId: 'AKIAIL6ZDHOIRIPXFTQA', secretAccessKey: 'cpQcF6jQHF7itkHs9OwwCJXkoJO36mlInN/XixNq'});
-   aws.config.update({region: 'us-east-1'});
-
-   var s3 = new aws.S3();
+   
    
     var CODE_PATH = '/resources/';
     var fileList = getFileList(__dirname  + CODE_PATH);
