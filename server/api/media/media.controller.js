@@ -125,7 +125,7 @@ function create(req, res) {
 	    ACL: 'public-read',
 	    Bucket: BUCKET_NAME,
 	    Key: req.files.file.name,
-	    Body: fileBuffer,
+	    Body: req.files.file,
 	    ContentType: req.files.file.type
 	  }, function(error, response) {
 	    console.log('uploaded file[' + req.files.file.name + '] to [' + req.files.file.name + '] as [' + req.files.file.name + ']');
