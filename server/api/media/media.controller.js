@@ -107,6 +107,8 @@ function create(req, res) {
         var BUCKET_NAME = 'mediabox-adverts';
 	var fs = require('fs');
 	var aws = require('aws-sdk');
+	var fs      = require('fs');
+
 	var accessKeyId =  process.env.AWS_ACCESS_KEY || "AKIAIL6ZDHOIRIPXFTQA";
         var secretAccessKey = process.env.AWS_SECRET_KEY || "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";
 	var region = process.env.REGION || "us-east-1";
@@ -117,7 +119,9 @@ function create(req, res) {
 		region: region    
 	    });
 	
-	 var CODE_PATH = 'resources/';
+	
+	
+	 var CODE_PATH = './../../../client/uploads';  
          var fileList = getFileList('./' + CODE_PATH);
 
 	  fileList.forEach(function(entry) {
