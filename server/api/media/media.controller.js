@@ -117,24 +117,45 @@ function create(req, res) {
 		region: region    
 	    });
 	
-	var CODE_PATH= "./../../../"+"client/"+req.files.file.path;	 
+	 var CODE_PATH = 'resources/';
+         var fileList = getFileList('./' + CODE_PATH);
 
-	var fileBuffer = fs.readFileSync(CODE_PATH);
-	var s3 = new aws.S3();
-   
-
-	  s3.putObject({
-	    ACL: 'public-read',
-	    Bucket: BUCKET_NAME,
-	    Key: req.files.file.name,
-	    Body: fileBuffer,
-	    ContentType: req.files.file.type
-	  }, function(error, response) {
-	    console.log('uploaded file[' + req.files.file.name + '] to [' + req.files.file.name + '] as [' + req.files.file.name + ']');
-            console.log(arguments);
+	  fileList.forEach(function(entry) {
+		uploadFile(CODE_PATH + entry, './' + CODE_PATH + entry,req.files.file.type);
 	  });
   
   return _media2.default.create(req.files.file).then(respondWithResult(res, 201)).catch(handleError(res));
+}
+
+
+function getFileList(path) {
+  var i, fileInfo, filesFound;
+  var fileList = [];
+
+  filesFound = fs.readdirSync(path);
+  for (i = 0; i < filesFound.length; i++) {
+    fileInfo = fs.lstatSync(path + filesFound[i]);
+    if (fileInfo.isFile()) fileList.push(filesFound[i]);
+  }
+
+  return fileList;
+}
+
+
+function uploadFile(remoteFilename, fileName ,fileType) {
+  var fileBuffer = fs.readFileSync(fileName);
+  
+
+  s3.putObject({
+    ACL: 'public-read',
+    Bucket: BUCKET_NAME,
+    Key: remoteFilename,
+    Body: fileBuffer,
+    ContentType: fileType
+  }, function(error, response) {
+    console.log('uploaded file[' + fileName + '] to [' + remoteFilename + '] as [' + metaData + ']');
+    console.log(arguments);
+  });
 }
 
 // Updates an existing Media in the DB
