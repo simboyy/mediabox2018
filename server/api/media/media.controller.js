@@ -117,7 +117,11 @@ function create(req, res) {
    req.files.file.uid = req.user.email;
    req.files.file.path = req.files.file.path.replace("client\\", "").replace('client/', '').replace('client//', ''); 
   
-   
+   var str = req.files.file.path;
+   var arr = str.split("/");
+   var tempPath = arr[4];
+   var fullPath = "https://s3.amazonaws.com/mediabox-adverts//resources/"+tempPath;  
+    req.files.file.path = fullPath;
    
     var CODE_PATH = '/resources/';
     var fileList = getFileList(__dirname  + CODE_PATH);
@@ -125,6 +129,8 @@ function create(req, res) {
     fileList.forEach(function(entry) {
       uploadFile(CODE_PATH + entry, __dirname  + CODE_PATH + entry);
     });
+  
+  
   
   
   
