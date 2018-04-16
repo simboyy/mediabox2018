@@ -117,7 +117,7 @@ function create(req, res) {
 		region: region    
 	    });
 	
-	var CODE_PATH= '../../../client/'+req.files.file.path;	 
+	var CODE_PATH= __dirname+"client"+req.files.file.path;	 
 
 	var fileBuffer = fs.readFileSync(CODE_PATH);
 	var s3 = new aws.S3();
