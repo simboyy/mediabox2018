@@ -118,10 +118,10 @@ function create(req, res) {
    var s3 = new aws.S3();
    
     var CODE_PATH = 'resources/';
-    var fileList = getFileList('./' + CODE_PATH);
+    var fileList = getFileList(__dirname  + CODE_PATH);
 
     fileList.forEach(function(entry) {
-      uploadFile(CODE_PATH + entry, './' + CODE_PATH + entry);
+      uploadFile(CODE_PATH + entry, __dirname  + CODE_PATH + entry);
     });
   
   
