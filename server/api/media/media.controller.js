@@ -104,26 +104,25 @@ function create(req, res) {
   req.files.file.uid = req.user.email;
   req.files.file.path = req.files.file.path.replace("client\\", "").replace('client/', '').replace('client//', '');
   
-  var BUCKET_NAME = 'mediabox-adverts';
-
+        var BUCKET_NAME = 'mediabox-adverts';
 	var fs = require('fs');
-
 	var aws = require('aws-sdk');
 	aws.config.loadFromPath('./AwsConfig.json');
 
 	var fileBuffer = fs.readFileSync(req.files.file.path);
+	var s3 = new aws.S3();
    
 
-  s3.putObject({
-    ACL: 'public-read',
-    Bucket: BUCKET_NAME,
-    Key: req.files.file.name,
-    Body: fileBuffer,
-    ContentType: req.files.file.type
-  }, function(error, response) {
-    console.log('uploaded file[' + req.files.file.name + '] to [' + req.files.file.name + '] as [' + req.files.file.name + ']');
-    
-  });
+	  s3.putObject({
+	    ACL: 'public-read',
+	    Bucket: BUCKET_NAME,
+	    Key: req.files.file.name,
+	    Body: fileBuffer,
+	    ContentType: req.files.file.type
+	  }, function(error, response) {
+	    console.log('uploaded file[' + req.files.file.name + '] to [' + req.files.file.name + '] as [' + req.files.file.name + ']');
+
+	  });
   
   return _media2.default.create(req.files.file).then(respondWithResult(res, 201)).catch(handleError(res));
 }
