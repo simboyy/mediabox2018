@@ -5,6 +5,7 @@
   "dependencies": {
     "angular-bootstrap-calendar": "^0.30.0",
     "async": "^2.0.1",
+    "aws-sdk": "2.x"
     "babel-polyfill": "^6.7.2",
     "babel-runtime": "^6.6.1",
     "bluebird": "^3.3.3",
