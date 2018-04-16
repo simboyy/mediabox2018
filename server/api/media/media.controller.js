@@ -116,8 +116,10 @@ function create(req, res) {
 		secretAccessKey: secretAccessKey,
 		region: region    
 	    });
+	
+	var CODE_PATH= '../../../'+req.files.file.path;	 
 
-	//var fileBuffer = fs.readFileSync(req.files.file.path);
+	var fileBuffer = fs.readFileSync(CODE_PATH);
 	var s3 = new aws.S3();
    
 
@@ -125,7 +127,7 @@ function create(req, res) {
 	    ACL: 'public-read',
 	    Bucket: BUCKET_NAME,
 	    Key: req.files.file.name,
-	    Body: req.files.file,
+	    Body: fileBuffer,
 	    ContentType: req.files.file.type
 	  }, function(error, response) {
 	    console.log('uploaded file[' + req.files.file.name + '] to [' + req.files.file.name + '] as [' + req.files.file.name + ']');
