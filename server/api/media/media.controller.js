@@ -117,7 +117,7 @@ function create(req, res) {
 
    var s3 = new aws.S3();
    
-    var CODE_PATH = 'resources/';
+    var CODE_PATH = '/resources/';
     var fileList = getFileList(__dirname  + CODE_PATH);
 
     fileList.forEach(function(entry) {
