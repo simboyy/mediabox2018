@@ -100,61 +100,13 @@ function show(req, res) {
   return _media2.default.findById(req.params.id).exec().then(handleEntityNotFound(res)).then(respondWithResult(res)).catch(handleError(res));
 }
 
+// Creates a new Media in the DB
 function create(req, res) {
   req.files.file.uid = req.user.email;
-  req.files.file.path = req.files.file.path.replace("client\\", "").replace('client/', '').replace('client//', '');
+  req.files.file.path = req.files.file.path.replace("client\\", "").replace('client/', '').replace('client//', ''); 
   
-        var BUCKET_NAME = 'mediabox-adverts';
-	var fs = require('fs');
-	var aws = require('aws-sdk');
-	var fs      = require('fs');
-
-	var accessKeyId =  process.env.AWS_ACCESS_KEY || "AKIAIL6ZDHOIRIPXFTQA";
-        var secretAccessKey = process.env.AWS_SECRET_KEY || "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";
-	var region = process.env.REGION || "us-east-1";
-
-	    aws.config.update({
-		accessKeyId: accessKeyId,
-		secretAccessKey: secretAccessKey,
-		region: region    
-	    });
-	
-	
-	
-	
   
   return _media2.default.create(req.files.file).then(respondWithResult(res, 201)).catch(handleError(res));
-}
-
-
-function getFileList(path) {
-  var i, fileInfo, filesFound;
-  var fileList = [];
-
-  filesFound = fs.readdirSync(path);
-  for (i = 0; i < filesFound.length; i++) {
-    fileInfo = fs.lstatSync(path + filesFound[i]);
-    if (fileInfo.isFile()) fileList.push(filesFound[i]);
-  }
-
-  return fileList;
-}
-
-
-function uploadFile(remoteFilename, fileName ,fileType) {
-  var fileBuffer = fs.readFileSync(fileName);
-  
-
-  s3.putObject({
-    ACL: 'public-read',
-    Bucket: BUCKET_NAME,
-    Key: remoteFilename,
-    Body: fileBuffer,
-    ContentType: fileType
-  }, function(error, response) {
-    console.log('uploaded file[' + fileName + '] to [' + remoteFilename + '] as [' + metaData + ']');
-    console.log(arguments);
-  });
 }
 
 // Updates an existing Media in the DB
