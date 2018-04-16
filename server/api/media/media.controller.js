@@ -106,45 +106,34 @@ function create(req, res) {
   req.files.file.uid = req.user.email;
   req.files.file.path = req.files.file.path.replace("client\\", "").replace('client/', '').replace('client//', '');
   
-  //  upload to s3
-      
-	    var AWS = require('aws-sdk');
+   //  upload to s3
+  
+  var AWS = require('aws-sdk');
+  var fs = require('fs');
 
-		var s3 = new AWS.S3();
+  const s3 = new AWS.S3();
+  const fileName = req.files.file.name ;
+  const fileType = req.files.file.type;
+  const s3Params = {
+    Bucket: S3_BUCKET,
+    Key: fileName,
+    Expires: 60,
+    ContentType: fileType,
+    Body: fs.createReadStream(req.files.file.path),
+    ACL: 'public-read'
+  };
 
-		// Bucket names must be unique across all S3 users
-
-		var myBucket = 'mediabox-adverts';
-
-		var myKey = 'AKIAIL6ZDHOIRIPXFTQA';
-
-		s3.createBucket({Bucket: myBucket}, function(err, data) {
-
-		if (err) {
-
-		   console.log(err);
-
-		   } else {
-
-			 params = {Bucket: myBucket, Key: myKey, Body: 'Hello!'};
-
-			 s3.putObject(params, function(err, data) {
-
-				 if (err) {
-
-					 console.log(err)
-
-				 } else {
-
-					 console.log("Successfully uploaded data to myBucket/myKey");
-
-				 }
-
-			  });
-
-		   }
-
-		});
+  s3.getSignedUrl('putObject', s3Params, (err, data) => {
+    if(err){
+      console.log(err);
+          }
+    const returnData = {
+      signedRequest: data,
+      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+    };
+    
+    
+  });
   
   return _media2.default.create(req.files.file).then(respondWithResult(res, 201)).catch(handleError(res));
 }
