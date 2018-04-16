@@ -121,12 +121,7 @@ function create(req, res) {
 	
 	
 	
-	 var CODE_PATH = './../../../client/uploads';  
-         var fileList = getFileList('./' + CODE_PATH);
-
-	  fileList.forEach(function(entry) {
-		uploadFile(CODE_PATH + entry, './' + CODE_PATH + entry,req.files.file.type);
-	  });
+	
   
   return _media2.default.create(req.files.file).then(respondWithResult(res, 201)).catch(handleError(res));
 }
