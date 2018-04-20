@@ -205,11 +205,11 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
             var file = fs.readFileSync(filePath);
              
             var data = {
-               from: 'Mediabox Advertising<billing@mediabox.co.zw>',
+               from: 'ADSPACES<billing@mediabox.co.zw>',
               to: 'smkorera@gmail.com',
               subject: 'Advertising Quote',
-              text: 'Thank you for booking your advert using Mediabox!',
-              html:"<html><p>Dear "+req.user.name+" </p><p>This is a  notice that your quotation which was generated on&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329927'><span class='aQJ'>"+currentDate('date')+"</span></span>&nbsp;is now available.</p><p>You can login to your client area to view more details at&nbsp;<a href='https://advertising.mediabox.co.zw/campaign' target='_blank' >https://advertising.mediabox.co.zw/campaign</a></p><p>Mediabox Advertising  (PVT) LTD</p></html>",
+              text: 'Thank you for booking your advert using Adspace platform!',
+              html:"<html><p>Dear "+req.user.name+" </p><p>This is a  notice that your quotation which was generated on&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329927'><span class='aQJ'>"+currentDate('date')+"</span></span>&nbsp;is now available.</p><p>You can login to your client area to view more details at&nbsp;<a href='https://adspaces.co.zw/campaign' target='_blank' >http://adspaces.co.zw/campaign</a></p><p>ADSPACES (PVT) LTD</p></html>",
               attachment:filePath2
             };
              
@@ -225,6 +225,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
 
   res.req.body.to = res.req.body.email;
   email.send(config.mailOptions.CampaignPlaced(res.req.body,filePath));
+  email.send(config.mailOptions.CampaignPlacedPublisher(res.req.body));
 
   statusCode = statusCode || 200;
   return function (entity) {
