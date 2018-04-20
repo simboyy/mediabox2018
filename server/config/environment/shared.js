@@ -10,7 +10,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
   wishlist: true,
   mailOptions: {
     signUpAdvertiser: function signUpAdvertiser(body) {
-	    console.log(body);
+	   
       return {
         from: 'Adspaces <admin@adspaces.co.zw>',
         to: body.email,
@@ -62,6 +62,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
       };
     },
     CampaignPlaced: function CampaignPlaced(body) {
+	 console.log(body);    
       return {
         from: 'Adspaces <adsn@adspaces.co.zw>',
         to: 'smkorera@gmail.com',
@@ -71,6 +72,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
       };
     },
 	CampaignPlacedPublisher: function CampaignPlaced(body) {
+		 console.log(body);
       return {
         from: 'Adspaces <ads@adspaces.co.zw>',
         to: 'smkorera@gmail.com',
