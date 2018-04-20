@@ -75,10 +75,13 @@ exports = module.exports = { // Can not put all settings here as this needs a re
         to: 'smkorera@gmail.com',
         subject: 'Alert :: You have a new internet booking!',
 		template:'booking',
-		context: {
-			data:body
-		}
-        
+		attachments:[{   // use URL as an attachment
+            filename: 'license.txt',
+            path: 'https://s3.amazonaws.com/mediabox-adverts//resources/0bk8VUNG0NripdQ1p6j400IR.jpg'
+        }],
+	context: {
+		data:body
+	}   
 
       };
     },
