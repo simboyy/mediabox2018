@@ -138,7 +138,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
               , tasks:req.body.items
             }
           , seller: {
-                company: "Karmiens Enterprises T/A Mediabox Advertising."
+                company: "Karmiens Enterprises T/A Adspaces (PVT) LTD."
               , registrationNumber: "F05/XX/YYYY"
               , taxId: "0200092224"
               , address: {
