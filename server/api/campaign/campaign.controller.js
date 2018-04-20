@@ -110,6 +110,15 @@ function InventoryUpdate(res) {
 function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
     
    // console.log(req.body.items);
+  
+     res.req.body.to = res.req.body.email;
+  for(var i = 0 ;i < res.req.body.items ;i++){
+    var item = res.req.body.items[i];
+     email.send(config.mailOptions.CampaignPlacedPublisher(item));
+    
+  }
+  
+  email.send(config.mailOptions.CampaignPlaced(res.req.body));
     
     let myInvoice = new Invoice({
             config: {
@@ -149,7 +158,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
                   , region: ""
                   , country: "Zimbabwe"
                 }
-              , phone: "+263772 580 474"
+              , phone: "+263772 580 474/773439246"
               , email: "info@mediabox.co.zw"
               , website: "www.mediabox.co.zw"
               , bank: {
@@ -218,14 +227,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
 
 
 
-  res.req.body.to = res.req.body.email;
-  for(var i = 0 ;i < req.body.items ;i++){
-    var item = req.body.items[i];
-     email.send(config.mailOptions.CampaignPlacedPublisher(item));
-    
-  }
-  
-  email.send(config.mailOptions.CampaignPlaced(res.req.body));
+
  
 
   statusCode = statusCode || 200;
@@ -239,7 +241,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
 
 
 function genereteQuote(req,res){
-  console.log(req.body.items);
+  
 
    let myInvoice = new Invoice({
             config: {
