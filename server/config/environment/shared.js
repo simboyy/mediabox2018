@@ -10,11 +10,12 @@ exports = module.exports = { // Can not put all settings here as this needs a re
   wishlist: true,
   mailOptions: {
     signUpAdvertiser: function signUpAdvertiser(body) {
+	    console.log(body);
       return {
         from: 'admin@adspaces.co.zw',
         to: 'smkorera@gmail.com',
         subject: 'Welcome to Adspaces!!',
-        html: '<p><b>Thank you for registering for Adspaces.</b> You will find that it’s a great way to discover media options, build advertising campaigns ,make bookings and send adverts directly to  publishers with no back and forth .<br> Increase your sales and boost your profits without any significant legwork by discovering cost effective advertising media options through Adspaces.<p>Here are a few resources from our getting started section that might help you out.<br/><ul><li>Step-by-Step Guide to Your First Adspaces Campaign https://www.youtube.com/watch?v=OifS1gdXafAFAQS</li><li> What publishers can I find on Adspaces? How do I benefit ? http://www.mediabox.co.zw/index.html#faq </li></ul></p><p>Again I want to welcome you to our community. I cant wait to hear about your experience with Adspaces<br/>Enjoy redefined Convenience <br></p><p>Simbarashe Mukorera</p><p>P.S. I’m your customer support hero in charge of keeping you happy. If you have ANY questions... problems... or concerns... please feel free to reach out to ask me before getting frustrated (Phone:263 773 439 246 ,Skype: simbarashe.mukorera1, Email: admin@adspaces.co.zw)</p>' // html body
+        html: '<p><b>Thank you for registering for Adspaces.</b></br> You will find that it’s a great way to discover media options, build advertising campaigns ,make bookings and send adverts directly to  publishers with no back and forth .<br> Increase your sales and boost your profits without any significant legwork by discovering cost effective advertising media options through Adspaces.<p>Here are a few resources from our getting started section that might help you out.<br/><ul><li>Step-by-Step Guide to Your First Adspaces Campaign https://www.youtube.com/watch?v=OifS1gdXafAFAQS</li><li> What publishers can I find on Adspaces? How do I benefit ? http://www.mediabox.co.zw/index.html#faq </li></ul></p><p>Again I want to welcome you to our community. I cant wait to hear about your experience with Adspaces<br/>Enjoy redefined Convenience <br></p><p>Simbarashe Mukorera</p><p>P.S. I’m your customer support hero in charge of keeping you happy. If you have ANY questions... problems... or concerns... please feel free to reach out to ask me before getting frustrated (Phone:263 773 439 246 ,Skype: simbarashe.mukorera1, Email: admin@adspaces.co.zw)</p>' // html body
 
       };
     },
