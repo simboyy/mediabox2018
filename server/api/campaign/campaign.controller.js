@@ -202,10 +202,10 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
             var filename = 'my-quote.html';
             var attch = new mailgun.Attachment({ dataimage, filename, contentType: 'application/pdf' });
 
-            var file = fs.readFileSync(filePath);
+            
              
             var data = {
-               from: 'ADSPACES<billing@mediabox.co.zw>',
+               from: 'ADSPACES<billing@adspaces.co.zw>',
               to: 'smkorera@gmail.com',
               subject: 'Advertising Quote',
               text: 'Thank you for booking your advert using Adspace platform!',
@@ -332,15 +332,11 @@ function genereteQuote(req,res){
             var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 
-            var dataimage = fs.readFileSync(filePath);
-
-            var filename = 'my-invoice.html';
-            var attch = new mailgun.Attachment({ dataimage, filename, contentType: 'application/pdf' });
-
-            var file = fs.readFileSync(filePath);
+           
+            var filename = 'my-invoice.html';           
              
             var data = {
-              from: 'Mediabox Advertising<billing@mediabox.co.zw>',
+              from: 'Adspaces Advertising<billing@adspaces.co.zw>',
               to: 'smkorera@gmail.com',
               subject: 'Advertising Quote',
               text: 'Thank you for booking your advert using Mediabox!',
@@ -505,10 +501,10 @@ function saveUpdates(updates) {
             var file = fs.readFileSync(filePath);
              
             var data = {
-              from: 'Mediabox Advertising<billing@mediabox.co.zw>',
+              from: 'Adspaces<billing@adspaces.co.zw>',
               to: 'smkorera@gmail.com',
               subject: 'Invoice Notice',
-              text: 'Thank you for booking your advert using Mediabox!',
+              text: 'Thank you for booking your advert using Adspaces!',
               html:"<html><p>Dear "+updated.items[0].advertiser.name+" </p><p>This is a billing notice that your invoice no. "+invoiceno+" which was generated on&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329927'><span class='aQJ'>"+currentDate('date')+"</span></span>&nbsp;is now available.</p><p>Your payment method is: Ecocash / Telecash / MasterCard / Visa / VPayments</p><p>Invoice: "+invoiceno+"<br />Balance Due: $"+total+" USD<br />Due Date:&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329928'><span class='aQJ'>"+currentDate('date')+"</span></span></p><p>You can login to your client area to view and pay the invoice at&nbsp;<a href='https://advertising.mediabox.co.zw/campaign' target='_blank' >https://advertising.mediabox.co.zw/campaign</a></p><p>Mediabox Advertising  (PVT) LTD</p></html>",
               attachment:filePath
             };
