@@ -7,7 +7,7 @@
 	We have attached the booking information here for your convenience.
 	<br />
 	<br />
-	Booking Number: {{ data.campaignNo}}
+	Booking ID: {{ data.sku}}
 	<br />
 	Dated Created:&nbsp;
 	<strong>
@@ -31,28 +31,28 @@
 		____________________________________________________________
 	</strong>
 	<br />
-	Company Name: Example Company
+	Company Name: {{data.advertiser.company}}
 	<br />
 	Company Email:
 	<strong>
-		<a href="mailto:exmple@example.com">
-			exmple@example.com
+		<a href="#">
+			{{data.advertiser.email}}
 		</a>
 	</strong>
 	<br />
 	Advertising Spot :
 	<strong>
-		 Herald -Full Page Colour
+		{{data.publisher}} - {{data.name}}
 	</strong>
 	<br />
 	Date and Time:
 	<strong>
-		 Thursday, April 12 2018 09:30:00
+		{{data.category}}
 	</strong>
 	<br />
 	Comments:
 	<strong>
-		 Example Comment :)
+         :)
 	</strong>
 	<br />
 	<br />
@@ -61,7 +61,7 @@
 	</strong>
 </p>
 <p>
-	<a href="https://s3.amazonaws.com/mediabox-adverts//resources/0bk8VUNG0NripdQ1p6j400IR.jpg" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://s3.amazonaws.com/mediabox-adverts//resources/0bk8VUNG0NripdQ1p6j400IR.jpg&amp;source=gmail&amp;ust=1524342069288000&amp;usg=AFQjCNHg_JUu7lviVMdu7UDoJAYIZPOcPQ">
+	<a href="{{data.creative}}" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q={{data.creative}}&amp;source=gmail&amp;ust=1524342069288000&amp;usg=AFQjCNHg_JUu7lviVMdu7UDoJAYIZPOcPQ">
 		Follow this link to preview the advert
 	</a>
 </p>
@@ -90,11 +90,5 @@
 	<strong>
 		Adspaces software - leading edge strategies to increase&nbsp;Efficiency, Work Flow and Profitability&nbsp;designed specifically for Advertising companies based companies around the world.
 	</strong>
-</p>
-<p>
-	Try to solve the new Formula Cube! It works exactly like a Rubik's Cube but it is only $2, from China. Learn to solve it with the tutorial on rubiksplace.com or use the
-	<a href="https://www.grubiks.com/solvers/rubiks-cube-3x3x3/">
-		solver to calculate
-	</a>
-	 the solution in a few steps.
-</p>
+     </p>
+
