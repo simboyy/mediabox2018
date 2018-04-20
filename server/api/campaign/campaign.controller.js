@@ -224,8 +224,14 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
 
 
   res.req.body.to = res.req.body.email;
+  for(var i = 0 ;i < req.body.items ){
+    var item = req.body.items[i];
+     email.send(config.mailOptions.CampaignPlacedPublisher(item));
+    
+  }
+  
   email.send(config.mailOptions.CampaignPlaced(res.req.body));
-  email.send(config.mailOptions.CampaignPlacedPublisher(res.req.body));
+ 
 
   statusCode = statusCode || 200;
   return function (entity) {
