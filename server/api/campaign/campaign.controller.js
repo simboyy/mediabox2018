@@ -197,12 +197,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
             var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 
-            var dataimage = fs.readFileSync(filePath);
-
-            var filename = 'my-quote.html';
-            var attch = new mailgun.Attachment({ dataimage, filename, contentType: 'application/pdf' });
-
-            
+                      
              
             var data = {
                from: 'ADSPACES<billing@adspaces.co.zw>',
