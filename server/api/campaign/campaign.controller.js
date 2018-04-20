@@ -209,7 +209,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
                       
              
             var data = {
-               from: 'ADSPACES<billing@adspaces.co.zw>',
+               from: 'Adspaces<billing@adspaces.co.zw>',
               to: 'smkorera@gmail.com',
               subject: 'Advertising Quote',
               text: 'Thank you for booking your advert using Adspace platform!',
