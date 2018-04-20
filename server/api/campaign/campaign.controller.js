@@ -224,7 +224,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
 
 
   res.req.body.to = res.req.body.email;
-  for(var i = 0 ;i < req.body.items ){
+  for(var i = 0 ;i < req.body.items ;i++){
     var item = req.body.items[i];
      email.send(config.mailOptions.CampaignPlacedPublisher(item));
     
