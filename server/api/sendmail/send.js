@@ -30,7 +30,7 @@ function send(req) {
 
 var nodemailerMailgun = nodemailer.createTransport(mg(auth));
 	nodemailerMailgun.use('compile',hbs({
-		viewPath:'views/email',
+		viewPath:'server/views/email',
 		extName:'.hbs'
 	}));
     nodemailerMailgun.sendMail(req, function (error, info) {
