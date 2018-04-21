@@ -80,7 +80,7 @@ function sendSMS(contact) {
   // send message
 
   project.sendMessage({
-    to_number: '+263+26377 3439 246',
+    to_number: '+263773439246',
     content: 'Hello from Adspaces!'
   }, function (err, message) {
     if (err) throw err;
