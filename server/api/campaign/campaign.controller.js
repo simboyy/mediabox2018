@@ -80,8 +80,8 @@ function sendSMS(contact) {
   // send message
 
   project.sendMessage({
-    to_number: '+263773439246',
-    content: 'Hello from Mediabox!'
+    to_number: '+263+26377 3439 246',
+    content: 'Hello from Adspaces!'
   }, function (err, message) {
     if (err) throw err;
     ////////////////////////////////console.log(message);
@@ -108,12 +108,21 @@ function InventoryUpdate(res) {
 }
 
 function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
-    
+     console.log("inside campaign placed");
+	 console.log("inside campaign placed");
+	 console.log("inside campaign placed");
+	 console.log("inside campaign placed");
+	 console.log("inside campaign placed");
+	 console.log("inside campaign placed");
+	 console.log("inside campaign placed");
+	 console.log("inside campaign placed");
    // console.log(req.body.items);
   
      res.req.body.to = res.req.body.email;
   for(var i = 0 ;i < res.req.body.items ;i++){
     var item = res.req.body.items[i];
+	 console.log("item",i);
+	 console.log(item);
      email.send(config.mailOptions.CampaignPlacedPublisher(item));
     
   }
@@ -158,7 +167,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
                   , region: ""
                   , country: "Zimbabwe"
                 }
-              , phone: "+263772 580 474/773439246"
+              , phone: "+26377 2580 474/+26377 3439 246"
               , email: "info@mediabox.co.zw"
               , website: "www.mediabox.co.zw"
               , bank: {
@@ -218,17 +227,13 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
             };
              
             mailgun.messages().send(data, function (error, body) {
-              console.log(body);
+              //console.log(body);
             });
 
 
         });
 
 
-
-
-
- 
 
   statusCode = statusCode || 200;
   return function (entity) {
@@ -281,7 +286,7 @@ function genereteQuote(req,res){
                   , region: ""
                   , country: "Zimbabwe"
                 }
-              , phone: "+263772 580 474"
+              , phone: "+26377 2580 474/+26377 3439 246"
               , email: "info@mediabox.co.zw"
               , website: "www.mediabox.co.zw"
               , bank: {
@@ -319,9 +324,9 @@ function genereteQuote(req,res){
 
         // Render invoice as HTML and PDF
         myInvoice.toHtml(__dirname + "/my-quote.html", (err, data) => {
-            console.log("Saved HTML file");
+            //console.log("Saved HTML file");
         }).toPdf(__dirname + "/my-quote.pdf", (err, data) => {
-            console.log("Saved pdf file");
+           // console.log("Saved pdf file");
 
 
             var api_key = 'key-a2cb48ef184b3e02e563b2d3a521aa48';
@@ -342,7 +347,7 @@ function genereteQuote(req,res){
             };
              
             mailgun.messages().send(data, function (error, body) {
-              console.log(body);
+              //console.log(body);
             });
 
 
@@ -379,8 +384,6 @@ function respondWithResult(res, statusCode) {
 
 function saveUpdates(updates) {
 
-  
-
   return function (entity) {
 
     var updated = _lodash2.default.merge(entity, updates);
@@ -401,9 +404,6 @@ function saveUpdates(updates) {
 
       var invoiceno = randomInt(10, 100);
       
-
-
-
       let myInvoice = new Invoice({
             config: {
                 template: __dirname + "/template/index.html"
@@ -442,7 +442,7 @@ function saveUpdates(updates) {
                   , region: ""
                   , country: "Zimbabwe"
                 }
-              , phone: "+263772 580 474"
+              , phone: "+26377 2580 474/+26377 3439 246"
               , email: "info@mediabox.co.zw"
               , website: "www.mediabox.co.zw"
               , bank: {
@@ -480,9 +480,9 @@ function saveUpdates(updates) {
 
         // Render invoice as HTML and PDF
         myInvoice.toHtml(__dirname + "/my-invoice.html", (err, data) => {
-            console.log("Saved HTML file");
+            //console.log("Saved HTML file");
         }).toPdf(__dirname + "/my-invoice.pdf", (err, data) => {
-            console.log("Saved pdf file");
+            //console.log("Saved pdf file");
 
 
             var api_key = 'key-a2cb48ef184b3e02e563b2d3a521aa48';
@@ -507,13 +507,9 @@ function saveUpdates(updates) {
             };
              
             mailgun.messages().send(data, function (error, body) {
-              console.log(body);
+              //console.log(body);
             });
-
-
-        });
-
-      
+        });      
 
      }
 
