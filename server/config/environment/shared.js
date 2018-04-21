@@ -62,7 +62,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
       };
     },
     CampaignPlaced: function CampaignPlaced(body) {
-	 console.log(body);    
+	     
       return {
         from: 'Adspaces <adsn@adspaces.co.zw>',
         to: 'smkorera@gmail.com',
@@ -71,22 +71,22 @@ exports = module.exports = { // Can not put all settings here as this needs a re
 
       };
     },
-	CampaignPlacedPublisher: function CampaignPlaced(body) {
-		 console.log(body);
-      return {
-        from: 'Adspaces <ads@adspaces.co.zw>',
-        to: 'smkorera@gmail.com',
-        subject: 'Alert :: You have a new internet booking!',
+	CampaignPlacedPublisher: function CampaignPlacedPublisher(body) {
+		
+	      return {
+		from: 'Adspaces <ads@adspaces.co.zw>',
+		to: 'smkorera@gmail.com',
+		subject: 'Alert :: You have a new internet booking!',
 		template:'booking',
 		attachments:[{   // use URL as an attachment
-            filename: 'license.txt',
-            path: 'https://s3.amazonaws.com/mediabox-adverts//resources/0bk8VUNG0NripdQ1p6j400IR.jpg'
-        }],
-	context: {
-		data:body
-	}   
+		  filename: 'license.txt',
+		  path: 'https://s3.amazonaws.com/mediabox-adverts//resources/0bk8VUNG0NripdQ1p6j400IR.jpg'
+		 }],
+		context: {
+			data:body
+		}   
 
-      };
+	      };
     },
     CampaignUpdated: function CampaignUpdated(body) {
       return {
