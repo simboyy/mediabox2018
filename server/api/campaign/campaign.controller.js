@@ -115,18 +115,12 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
 	
 	var items = res.req.body.items;
 	     items.forEach((item, index) => {
-		  console.log("inside campaign placed");
-		 console.log("inside campaign placed");
-		 console.log("inside campaign placed");
-		 console.log("inside campaign placed");
-		 console.log("inside campaign placed");
-		 console.log("inside campaign placed");
-		 console.log("inside campaign placed");
-		 console.log("inside campaign placed");  
-		 console.log(item);
+		  email.send(config.mailOptions.CampaignPlacedPublisher(item)); 
+		  console.log("inside foreach");
+		  console.log(item.name);
 		});
   
-    email.send(config.mailOptions.CampaignPlacedPublisher(res.req.body));  
+    
     email.send(config.mailOptions.CampaignPlaced(res.req.body));    
 
   statusCode = statusCode || 200;
