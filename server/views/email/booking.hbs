@@ -7,7 +7,7 @@
 	We have attached the booking information here for your convenience.
 	<br />
 	<br />
-	Booking ID: {{ data.items[0].sku}}
+	Booking ID: {{ data.sku}}
 	<br />
 	Dated Created:&nbsp;
 	<strong>
@@ -31,23 +31,23 @@
 		____________________________________________________________
 	</strong>
 	<br />
-	Company Name: {{data.items[0].advertiser.company}}
+	Company Name: {{data.advertiser.company}}
 	<br />
 	Company Email:
 	<strong>
 		<a href="#">
-			{{data.items[0].advertiser.email}}
+			{{data.advertiser.email}}
 		</a>
 	</strong>
 	<br />
 	Advertising Spot :
 	<strong>
-		{{data.items[0].publisher}} - {{data.items[0].name}}
+		{{data.publisher}} - {{data.name}}
 	</strong>
 	<br />
 	Date and Time:
 	<strong>
-		{{data.items[0].category}}
+		{{data.category}}
 	</strong>
 	<br />
 	Comments:
@@ -61,7 +61,7 @@
 	</strong>
 </p>
 <p>
-	<a href="{{data.items[0].creative}}" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q={{data.items[0].creative}}&amp;source=gmail&amp;ust=1524342069288000&amp;usg=AFQjCNHg_JUu7lviVMdu7UDoJAYIZPOcPQ">
+	<a href="{{data.creative}}" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q={{data.creative}}&amp;source=gmail&amp;ust=1524342069288000&amp;usg=AFQjCNHg_JUu7lviVMdu7UDoJAYIZPOcPQ">
 		Follow this link to preview the advert
 	</a>
 </p>
