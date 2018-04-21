@@ -83,7 +83,9 @@ exports = module.exports = { // Can not put all settings here as this needs a re
 		  path: body.creative
 		 }],
 		context: {
-			data:body
+			data:body,
+			date: new Date()
+		
 		}   
 
 	      };
