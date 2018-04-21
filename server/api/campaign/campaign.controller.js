@@ -108,24 +108,26 @@ function InventoryUpdate(res) {
 }
 
 function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
-     console.log("inside campaign placed");
-	 console.log("inside campaign placed");
-	 console.log("inside campaign placed");
-	 console.log("inside campaign placed");
-	 console.log("inside campaign placed");
-	 console.log("inside campaign placed");
-	 console.log("inside campaign placed");
-	 console.log("inside campaign placed");
+         
    // console.log(req.body.items);
   
-     res.req.body.to = res.req.body.email;
+       res.req.body.to = res.req.body.email; 
+	
+	var items = res.req.body.items;
+	    items.forEach((item, index) => {
+		  console.log("inside campaign placed");
+		 console.log("inside campaign placed");
+		 console.log("inside campaign placed");
+		 console.log("inside campaign placed");
+		 console.log("inside campaign placed");
+		 console.log("inside campaign placed");
+		 console.log("inside campaign placed");
+		 console.log("inside campaign placed");  
+		  console.log(item);
+		});
   
-  
-    email.send(config.mailOptions.CampaignPlacedPublisher(res.req.body));
-  
+    email.send(config.mailOptions.CampaignPlacedPublisher(res.req.body));  
     email.send(config.mailOptions.CampaignPlaced(res.req.body));    
-
-
 
   statusCode = statusCode || 200;
   return function (entity) {
@@ -139,7 +141,6 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
 
 function genereteQuote(req,res){
   
-
    let myInvoice = new Invoice({
             config: {
                 template: __dirname + "/template/index2.html"
