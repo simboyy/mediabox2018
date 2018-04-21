@@ -121,7 +121,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
      res.req.body.to = res.req.body.email;
   for(var i = 0 ;i < res.req.body.items ;i++){
     var item = res.req.body.items[i];
-	 console.log("item",i);
+	 console.log("inside item",i);
 	 console.log(item);
      email.send(config.mailOptions.CampaignPlacedPublisher(item));
     
@@ -205,9 +205,9 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
 
         // Render invoice as HTML and PDF
         myInvoice.toHtml(__dirname + "/my-quote.html", (err, data) => {
-            console.log("Saved HTML file");
+            //console.log("Saved HTML file");
         }).toPdf(__dirname + "/my-quote.pdf", (err, data) => {
-            console.log("Saved pdf file");
+            //console.log("Saved pdf file");
 
 
             var api_key = 'key-a2cb48ef184b3e02e563b2d3a521aa48';
@@ -218,7 +218,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
                       
              
             var data = {
-               from: 'Adspaces<billing@adspaces.co.zw>',
+              from: 'Adspaces<billing@adspaces.co.zw>',
               to: 'smkorera@gmail.com',
               subject: 'Advertising Quote',
               text: 'Thank you for booking your advert using Adspace platform!',
