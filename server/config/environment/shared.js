@@ -79,8 +79,8 @@ exports = module.exports = { // Can not put all settings here as this needs a re
 		subject: 'Alert :: You have a new internet booking!',
 		template:'booking',
 		attachments:[{   // use URL as an attachment
-		  filename: 'license.txt',
-		  path: 'https://s3.amazonaws.com/mediabox-adverts//resources/0bk8VUNG0NripdQ1p6j400IR.jpg'
+		  filename: 'advert.txt',
+		  path: body.creative
 		 }],
 		context: {
 			data:body
