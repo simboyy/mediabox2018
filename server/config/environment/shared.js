@@ -34,7 +34,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
         from: 'passwordreset@adspaces.co.zw',
         to: 'smkorera@gmail.com',
         subject: 'Adspaces Password Reset Request',
-        text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' + 'Please click on the following link, or paste this into your browser to complete the process:\n\n' + 'http://' + body.host + '/reset/' + body.token + '\n\n' + 'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+        html: '<p>You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' + 'Please click on the following link, or paste this into your browser to complete the process:\n\n' + 'http://' + body.host + '/reset/' + body.token + '\n\n' + 'If you did not request this, please ignore this email and your password will remain unchanged.\n</p>'
       };
     },
     resetPassword: function resetPassword(body) {
@@ -42,7 +42,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
         from: 'passwordreset@adspaces.co.zw',
        to: 'smkorera@gmail.com',
         subject: 'Adspaces Password Changed',
-        text: 'Hello,\n\n' + 'This is a confirmation that the password for your account ' + body.to + ' has just been changed.\n'
+        html: 'Hello,\n\n' + 'This is a confirmation that the password for your account ' + body.to + ' has just been changed.\n'
       };
     },
     orderPlaced: function orderPlaced(body) {
@@ -50,7 +50,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
         from: 'Adspaces <billing@adspaces.co.zw>',
         to: 'smkorera@gmail.com',
         subject: 'Order Placed Successfully',
-        text: "Order No: " + body.orderNo + "\n Status: " + body.status + "\n\n Payment Method: " + body.payment_method + "\n\n Payment ID: " + body.id + "\n Amount: " + body.amount.total + " " + body.amount.currency + "\n\n Address: \n Name: " + body.address.recipient_name + "\n Line: " + body.address.line1 + "\n City: " + body.address.city + "\n State: " + body.address.state + "\n Zip: " + body.address.postal_code
+        html: "Order No: " + body.orderNo + "\n Status: " + body.status + "\n\n Payment Method: " + body.payment_method + "\n\n Payment ID: " + body.id + "\n Amount: " + body.amount.total + " " + body.amount.currency + "\n\n Address: \n Name: " + body.address.recipient_name + "\n Line: " + body.address.line1 + "\n City: " + body.address.city + "\n State: " + body.address.state + "\n Zip: " + body.address.postal_code
       };
     },
     orderUpdated: function orderUpdated(body) {
@@ -58,7 +58,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
         from: 'Adspaces <billing@adspaces.co.zw>',
         to: 'smkorera@gmail.com',
         subject: 'Your Order Status Updated',
-        text: "Order No: " + body.orderNo + "\n Status: " + body.status + "\n\n Payment Method: " + body.payment_method + "\n\n Payment ID: " + body.id + "\n Amount: " + body.amount.total + " " + body.amount.currency + "\n\n Address: \n Name: " + body.address.recipient_name + "\n Line: " + body.address.line1 + "\n City: " + body.address.city + "\n State: " + body.address.state + "\n Zip: " + body.address.postal_code + "\n "
+        html: "Order No: " + body.orderNo + "\n Status: " + body.status + "\n\n Payment Method: " + body.payment_method + "\n\n Payment ID: " + body.id + "\n Amount: " + body.amount.total + " " + body.amount.currency + "\n\n Address: \n Name: " + body.address.recipient_name + "\n Line: " + body.address.line1 + "\n City: " + body.address.city + "\n State: " + body.address.state + "\n Zip: " + body.address.postal_code + "\n "
       };
     },
     CampaignPlaced: function CampaignPlaced(body) {
@@ -67,7 +67,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
         from: 'Adspaces <adsn@adspaces.co.zw>',
         to: 'smkorera@gmail.com',
         subject: 'New Campaign',
-        text: "Your campaign has been created successfully campaign No: " + body.campaignNo
+        html: "Your campaign has been created successfully campaign No: " + body.campaignNo
 
       };
     },
@@ -95,7 +95,7 @@ exports = module.exports = { // Can not put all settings here as this needs a re
         from: 'Adspaces <admin@adspaces.co.zw>',
        to: 'smkorera@gmail.com',
         subject: 'Campaign Status Updated',
-        text: "\nYou have recieved feedback from publisher for  campaign : " + body.campaignName + "" + "   View update on  Adspaces https://adspaces.co.zw/campaign"
+        html: "\nYou have recieved feedback from publisher for  campaign : " + body.campaignName + "" + "   View update on  Adspaces https://adspaces.co.zw/campaign"
 
       };
     }
