@@ -1,3 +1,4 @@
+
 /**
  * Using Rails-like standard naming convention for endpoints.
  * GET     /api/Campaigns              ->  index
@@ -112,13 +113,13 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
    // console.log(req.body.items);
   
        res.req.body.to = res.req.body.email; 
-	
-	var items = res.req.body.items;
-	     items.forEach((item, index) => {
-		  email.send(config.mailOptions.CampaignPlacedPublisher(item)); 
-		  console.log("inside foreach");
-		  console.log(item.name);
-		});
+  
+  var items = res.req.body.items;
+       items.forEach((item, index) => {
+      email.send(config.mailOptions.CampaignPlacedPublisher(item)); 
+      console.log("inside foreach");
+      console.log(item.name);
+    });
   
     
   //  email.send(config.mailOptions.CampaignPlaced(res.req.body));    
@@ -229,7 +230,7 @@ function genereteQuote(req,res){
               to: 'smkorera@gmail.com',
               subject: 'Advertising Quote',
               text: 'Thank you for booking your advert using Mediabox!',
-              html:"<html><p>Dear "+updated.items[0].advertiser.name+" </p><p>This is a  notice that your quotation which was generated on&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329927'><span class='aQJ'>"+currentDate('date')+"</span></span>&nbsp;is now available.</p><p>You can login to your client area to view more details at&nbsp;<a href='https://advertising.mediabox.co.zw/campaign' target='_blank' >https://advertising.mediabox.co.zw/campaign</a></p><p>Mediabox Advertising  (PVT) LTD</p></html>",
+              html:"<html><p>Dear "+updated.items[0].advertiser.name+" </p><p>This is a  notice that your quotation which was generated on&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329927'><span class='aQJ'>"+currentDate('date')+"</span></span>&nbsp;is now available.</p><p>You can login to your client area to view more details at&nbsp;<a href='http://www.adspaces.co.zw/campaign' target='_blank' >http://www.adspaces.co.zw/campaign</a></p><p>Mediabox Advertising  (PVT) LTD</p></html>",
               attachment:filePath2
             };
              
@@ -389,7 +390,7 @@ function saveUpdates(updates) {
               to: 'smkorera@gmail.com',
               subject: 'Invoice Notice',
               text: 'Thank you for booking your advert using Adspaces!',
-              html:"<html><p>Dear "+updated.items[0].advertiser.name+" </p><p>This is a billing notice that your invoice no. "+invoiceno+" which was generated on&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329927'><span class='aQJ'>"+currentDate('date')+"</span></span>&nbsp;is now available.</p><p>Your payment method is: Ecocash / Telecash / MasterCard / Visa / VPayments</p><p>Invoice: "+invoiceno+"<br />Balance Due: $"+total+" USD<br />Due Date:&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329928'><span class='aQJ'>"+currentDate('date')+"</span></span></p><p>You can login to your client area to view and pay the invoice at&nbsp;<a href='https://advertising.mediabox.co.zw/campaign' target='_blank' >https://advertising.mediabox.co.zw/campaign</a></p><p>Mediabox Advertising  (PVT) LTD</p></html>",
+              html:"<html><p>Dear "+updated.items[0].advertiser.name+" </p><p>This is a billing notice that your invoice no. "+invoiceno+" which was generated on&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329927'><span class='aQJ'>"+currentDate('date')+"</span></span>&nbsp;is now available.</p><p>Your payment method is: Ecocash / Telecash / MasterCard / Visa / VPayments</p><p>Invoice: "+invoiceno+"<br />Balance Due: $"+total+" USD<br />Due Date:&nbsp;<span class='aBn' tabindex='0' data-term='goog_1714329928'><span class='aQJ'>"+currentDate('date')+"</span></span></p><p>You can login to your client area to view and pay the invoice at&nbsp;<a href='http://www.adspaces.co.zw/campaign' target='_blank' >http://www.adspaces.co.zw/campaign</a></p><p>Mediabox Advertising  (PVT) LTD</p></html>",
               attachment:filePath
             };
              
