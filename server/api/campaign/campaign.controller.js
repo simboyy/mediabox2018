@@ -122,7 +122,7 @@ function CampaignPlaced(req,res, statusCode,filePath,filePath2) {
     });
   
     
-  //  email.send(config.mailOptions.CampaignPlaced(res.req.body));    
+   email.send(config.mailOptions.CampaignPlaced(res.req.body));    
 
   statusCode = statusCode || 200;
   return function (entity) {
